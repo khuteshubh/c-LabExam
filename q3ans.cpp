@@ -3,6 +3,7 @@
 //Print list of all employees.
 //Print list of employee who got heights salary
 
+
 #include<iostream>
 using namespace std;
 
@@ -27,10 +28,12 @@ class Employee{
 		
 		
 		void diaplay_empData(){
-			cout<<"\nEmployee Id= "<<emp_Id<<"\nEmployee name= "<<employ_name<<"\n salary"<<salary;
+			cout<<"\nEmployee Id= "<<emp_Id<<"\nEmployee name= "<<employ_name<<"\n salary\t"<<salary;
 		}
 		
-		
+		float get_salary(){
+			return salary;
+		}
 		
 		void highest_salary(float salary){
 			
@@ -51,38 +54,40 @@ int main(){
 	
 	string employ_name;
 	float salary;
-	
 
+    
+	int i =0;
 	
-	
-	for(int i = 0;i<10;i++){
+	for( i = 0;i<10;i++){
+		cin.ignore();
 		
 		cout<<"\nEnter name  for "<<i+1<<" "<<"Employee";
 		getline(cin,employ_name);
 		cout<<"\nEnter salary  for "<<i+1<<" "<<"Employee";
 		cin>>salary;
-//		cin>>emp[i].get_empData(employ_name,salary);
-		emp[i].get_empData(employ_name,salary);
+        emp[i].get_empData(employ_name,salary);
+        
 		
 	}
 	
-		
+	cout<<"\n_____________________________________________________________________________";
+	for(int i=0;i<10;i++){
+		emp[i].diaplay_empData();
+		cout<<"\n_____________________________________________________________________________";
+	}
+
+	float max = emp[0].get_salary();
+	for(int i=1;i<10;i++){
+		if(emp[i].get_salary() > max){
+			max = emp[i].get_salary();
+		}
 		
 	}
 	
 	
-//	
-//	float max = emp[0].salary;
-//	for(int i=1;i<10;i++){
-//		if(p1[i] > max){
-//			max = emp[i].salary;
-//		}
-//		
-//	}
-//	highest_salary(max);
+	cout<<"\nhighest salary is "<<max;
 	
-//	Employee(emp);
-	
+
 	
 	
 	
