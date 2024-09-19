@@ -59,13 +59,14 @@ int main(){
 	int i =0;
 	
 	for( i = 0;i<10;i++){
-		cin.ignore();
+		
 		
 		cout<<"\nEnter name  for "<<i+1<<" "<<"Employee";
 		getline(cin,employ_name);
 		cout<<"\nEnter salary  for "<<i+1<<" "<<"Employee";
 		cin>>salary;
-        emp[i].get_empData(employ_name,salary);
+		cin.ignore();
+                emp[i].get_empData(employ_name,salary);
         
 		
 	}
